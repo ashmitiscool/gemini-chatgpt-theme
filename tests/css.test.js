@@ -24,6 +24,11 @@ assert.ok(css.includes('background-color: transparent') || css.includes('backgro
 assert.ok(css.includes('.markdown th') && css.includes('.markdown td'), 'Should style table headers and cells');
 assert.ok(/(\.markdown (table|th|td)[^}]*font-family:\s*ui-sans-serif)/.test(css) || /(th,\s*.*td[^}]*font-family:\s*ui-sans-serif)/.test(css), 'Should explicitly set ChatGPT font on tables, th, and td');
 
+// Code block single card assertions
+assert.ok(css.includes('.formatted-code-block-internal-container'), 'Should target .formatted-code-block-internal-container');
+assert.ok(/(\.formatted-code-block-internal-container[^}]*padding:\s*0)/.test(css), 'Should clear native padding on internal container to prevent offset header');
+
 console.log('✓ CSS tests passed!');
+
 
 
