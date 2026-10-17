@@ -328,15 +328,39 @@ code-block .code-block pre {
 /* --------------------------------------------------------------------------
    8. User Query Bubbles (Matching ChatGPT Right-Aligned / Dark Bubble)
    -------------------------------------------------------------------------- */
-user-query,
-.user-query-container {
+user-query {
   max-width: 708px !important;
   width: 100% !important;
   margin-inline: auto !important;
   padding: 0 !important;
-  margin-top: 1.5rem !important;
-  margin-bottom: 1.5rem !important;
+  margin-top: 1.25rem !important;
+  margin-bottom: 0.5rem !important;
 }
+
+/* Clear excessive nested margins and padding on inner query containers */
+.user-query-container {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Tighten action buttons row to prevent empty vertical gap below bubble */
+.luminous-actions-container {
+  margin-top: 2px !important;
+  margin-bottom: 0 !important;
+  height: 24px !important;
+  min-height: 24px !important;
+}
+
+.luminous-action-button,
+.luminous-action-button button,
+.luminous-actions-container button {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+}
+
 
 /* Style Gemini's actual prompt bubble container */
 .user-query-bubble-with-background,

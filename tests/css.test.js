@@ -28,7 +28,12 @@ assert.ok(/(\.markdown (table|th|td)[^}]*font-family:\s*ui-sans-serif)/.test(css
 assert.ok(css.includes('.formatted-code-block-internal-container'), 'Should target .formatted-code-block-internal-container');
 assert.ok(/(\.formatted-code-block-internal-container[^}]*padding:\s*0)/.test(css), 'Should clear native padding on internal container to prevent offset header');
 
+// User query spacing assertions (tighten gap between prompt and answer)
+assert.ok(css.includes('.luminous-actions-container'), 'Should tighten luminous-actions-container spacing');
+assert.ok(!css.includes('user-query,\n.user-query-container {\n  max-width: 708px !important;\n  width: 100% !important;\n  margin-inline: auto !important;\n  padding: 0 !important;\n  margin-top: 1.5rem !important;\n  margin-bottom: 1.5rem !important;\n}'), 'Should NOT multiply 1.5rem margins on nested user-query-container elements');
+
 console.log('✓ CSS tests passed!');
+
 
 
 
