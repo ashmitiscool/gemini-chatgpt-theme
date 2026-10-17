@@ -14,5 +14,6 @@ assert.ok(css.includes('mask-image: none'), 'Should disable Gemini hollow SVG bu
 assert.ok(css.includes('border-radius: 0.375rem') || css.includes('border-radius: 6px'), 'Should style inline code with 6px border radius');
 assert.ok(css.includes('font-weight: 600'), 'Should style bold/headings with 600 weight');
 assert.ok(css.includes('chatgpt-li-p') || css.includes('li > p'), 'Should handle list item paragraph spacing');
+assert.ok(css.includes('708px'), 'Should enforce 708px centered content column to prevent widescreen misalignment');
 
 console.log('✓ CSS tests passed!');

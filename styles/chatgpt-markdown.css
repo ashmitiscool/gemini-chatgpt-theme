@@ -16,6 +16,25 @@ message-content .markdown {
   color: #ececec !important;
   letter-spacing: normal !important;
   word-break: break-word !important;
+
+  /* Enforce consistent 708px centered column aligned with thinking-overlay and input bar */
+  max-width: 708px !important;
+  width: 100% !important;
+  margin-inline: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure all child blocks stay bounded to the 708px column */
+.markdown.markdown-main-panel > *,
+.markdown.tutor-markdown-rendering > *,
+message-content .markdown > * {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 /* Ensure paragraph spacing matches ChatGPT rhythm */
@@ -289,9 +308,12 @@ code-block .code-block pre {
    -------------------------------------------------------------------------- */
 user-query,
 .user-query-container {
-  max-width: 100% !important;
+  max-width: 708px !important;
+  width: 100% !important;
+  margin-inline: auto !important;
   padding: 0 !important;
-  margin: 1.5rem 0 !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
 }
 
 .user-query-container .query-text,
