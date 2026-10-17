@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini ChatGPT Theme",
+  "version": "1.0.0",
+  "description": "Redesigns Gemini's markdown and conversation typography to match ChatGPT's clean aesthetic.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://gemini.google.com/*"],
+      "css": ["styles/chatgpt-markdown.css"],
+      "js": ["content/normalizer.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
