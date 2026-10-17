@@ -316,17 +316,29 @@ user-query,
   margin-bottom: 1.5rem !important;
 }
 
-.user-query-container .query-text,
-.user-query-container .text-container {
+/* Style Gemini's actual prompt bubble container */
+.user-query-bubble-with-background,
+.user-query-bubble-with-background:not(.edit-mode) {
   background-color: #2f2f2f !important;
-  border-radius: 1.25rem !important;
+  border-radius: 1.5rem !important;
   padding: 0.75rem 1.25rem !important;
+}
+
+/* Inner text container: transparent to prevent double nested bubble */
+.user-query-container .query-text,
+.user-query-container .text-container,
+.user-query-bubble-with-background .query-text {
+  background-color: transparent !important;
+  background: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
   color: #ffffff !important;
   display: inline-block !important;
-  font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Roboto, sans-serif !important;
+  font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
   font-size: 16px !important;
   line-height: 1.5 !important;
 }
+
 
 /* --------------------------------------------------------------------------
    9. Response Action Icons (Subtle Muted Look with Clean Hover)
@@ -371,3 +383,22 @@ user-query,
   border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
   margin: 1.5rem 0 !important;
 }
+
+/* --------------------------------------------------------------------------
+   11. Icon Ligature Safeguard
+   -------------------------------------------------------------------------- */
+mat-icon,
+gem-icon,
+.material-symbols-outlined,
+.material-symbols-rounded,
+.material-symbols-sharp,
+.material-icons,
+.lumi-symbols,
+.mat-ligature-font,
+[fonticonname],
+[fonticonname] *,
+mat-icon *,
+gem-icon * {
+  font-family: "Luminous Symbols", "Google Symbols", "Material Symbols Outlined", "Material Symbols Rounded", "Material Icons" !important;
+}
+

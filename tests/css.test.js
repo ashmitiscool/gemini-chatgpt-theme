@@ -16,4 +16,9 @@ assert.ok(css.includes('font-weight: 600'), 'Should style bold/headings with 600
 assert.ok(css.includes('chatgpt-li-p') || css.includes('li > p'), 'Should handle list item paragraph spacing');
 assert.ok(css.includes('708px'), 'Should enforce 708px centered content column to prevent widescreen misalignment');
 
+// User query single bubble assertions
+assert.ok(css.includes('.user-query-bubble-with-background'), 'Should target .user-query-bubble-with-background');
+assert.ok(css.includes('background-color: transparent') || css.includes('background: none'), 'Inner query text must be transparent to prevent double bubble');
+
 console.log('✓ CSS tests passed!');
+
