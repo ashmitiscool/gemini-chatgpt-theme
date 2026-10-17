@@ -20,5 +20,10 @@ assert.ok(css.includes('708px'), 'Should enforce 708px centered content column t
 assert.ok(css.includes('.user-query-bubble-with-background'), 'Should target .user-query-bubble-with-background');
 assert.ok(css.includes('background-color: transparent') || css.includes('background: none'), 'Inner query text must be transparent to prevent double bubble');
 
+// Table typography assertions
+assert.ok(css.includes('.markdown th') && css.includes('.markdown td'), 'Should style table headers and cells');
+assert.ok(/(\.markdown (table|th|td)[^}]*font-family:\s*ui-sans-serif)/.test(css) || /(th,\s*.*td[^}]*font-family:\s*ui-sans-serif)/.test(css), 'Should explicitly set ChatGPT font on tables, th, and td');
+
 console.log('✓ CSS tests passed!');
+
 

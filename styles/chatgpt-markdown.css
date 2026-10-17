@@ -358,24 +358,49 @@ user-query,
 /* --------------------------------------------------------------------------
    10. Tables & Horizontal Rules
    -------------------------------------------------------------------------- */
-.markdown table {
+.markdown table,
+table {
   border-collapse: collapse !important;
   margin: 1rem 0 !important;
   width: 100% !important;
+  font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
   font-size: 0.9375rem !important;
 }
 
 .markdown th,
-.markdown td {
+.markdown td,
+table th,
+table td {
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
   padding: 0.5rem 0.75rem !important;
   text-align: left !important;
+  font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
 }
 
-.markdown th {
+.markdown th,
+table th {
   background-color: rgba(255, 255, 255, 0.05) !important;
   font-weight: 600 !important;
   color: #ffffff !important;
+}
+
+.markdown td,
+table td {
+  color: #ececec !important;
+}
+
+/* Ensure table child text inherits ChatGPT font */
+.markdown table *:not(code):not(pre):not(kbd):not(samp):not(mat-icon):not(gem-icon),
+table *:not(code):not(pre):not(kbd):not(samp):not(mat-icon):not(gem-icon) {
+  font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* Ensure code elements inside tables remain monospace */
+.markdown table code,
+table code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
 }
 
 .markdown hr {
@@ -383,6 +408,7 @@ user-query,
   border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
   margin: 1.5rem 0 !important;
 }
+
 
 /* --------------------------------------------------------------------------
    11. Icon Ligature Safeguard
