@@ -13,6 +13,7 @@ assert.ok(manifest.content_scripts && manifest.content_scripts.length > 0, 'Must
 const cs = manifest.content_scripts[0];
 assert.ok(cs.matches.includes('https://gemini.google.com/*'), 'Must match Gemini URL');
 assert.ok(cs.css.includes('styles/chatgpt-markdown.css'), 'Must register stylesheet');
+assert.ok(cs.js.includes('content/normalizer-core.js'), 'Must register normalizer-core script');
 assert.ok(cs.js.includes('content/normalizer.js'), 'Must register normalizer script');
 assert.strictEqual(cs.run_at, 'document_start', 'CSS must be injected at document_start');
 

@@ -12,7 +12,7 @@
     {
       "matches": ["https://gemini.google.com/*"],
       "css": ["styles/chatgpt-markdown.css"],
-      "js": ["content/normalizer.js"],
+      "js": ["content/normalizer-core.js", "content/normalizer.js"],
       "run_at": "document_start"
     }
   ]
